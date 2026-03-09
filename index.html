@@ -2,92 +2,112 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Arithmos – Vitta Vibhava</title>
+<title>ShadeWork</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1 class="main-title">Arithmos – Vitta Vibhava</h1>
+<h1>ShadeWork</h1>
 
 <!-- ================= START SCREEN ================= -->
 
 <div id="startScreen">
 
-    <div class="name-card">
-        <h2>Enter Your Name</h2>
-        <input type="text" id="playerName" placeholder="Enter your name">
-        <button onclick="startGame()">Start</button>
-    </div>
+    <button onclick="startGame()">Start Game</button>
 
-    <div class="instruction-card">
+    <div id="instructions">
 
         <h3>How To Play</h3>
         <ul>
-            <li>Fill white cells with numbers 1–9.</li>
-            <li>Numbers in each group must add up to the clue.</li>
-            <li>No digit can repeat inside the same group.</li>
-            <li>Each clue cell may contain horizontal, vertical, or both clues.</li>
+            <li>Each number represents consecutive filled (black) cells.</li>
+            <li>Multiple numbers mean separate groups.</li>
+            <li>There must be at least one blank cell between groups.</li>
+            <li>Left numbers → Row clues. Top numbers → Column clues.</li>
         </ul>
 
         <h3>Controls</h3>
         <ul>
-            <li>Select a white cell.</li>
-            <li>Use number pad to enter digit.</li>
-            <li>Use Undo to revert last move.</li>
+            <li>Left Click → Fill cell</li>
+            <li>Right Click → X mark</li>
+            <li>Undo → Reverse last move</li>
+            <li>Clear Grid → Reset puzzle</li>
         </ul>
 
         <h3>Competition Rules</h3>
         <ul>
             <li>Timer starts when game begins.</li>
-            <li>Once correct submission is made, board locks.</li>
-            <li>Do not refresh during competition.</li>
+            <li>Board locks after correct submission.</li>
+            <li>52-character secure code generated on success.</li>
         </ul>
 
-     <h3>Example (Solved Kakuro)</h3>
+    </div>
 
-<p>
-Here 0 represents a black or clue cell.
-If a white cell appears to the right, it forms a horizontal clue.
-If a white cell appears below, it forms a vertical clue.
-A cell can contain BOTH clues.
-</p>
+    <!-- Example Grid -->
+    <div class="example-wrapper">
 
-<div class="example-wrapper">
+        <table class="example-grid">
 
-<table class="example-grid">
+            <!-- COLUMN CLUES -->
+            <tr>
+                <td class="no-border"></td>
+                <td class="example-clue">3</td>
+                <td class="example-clue">1&nbsp;1&nbsp;1</td>
+                <td class="example-clue">5</td>
+                <td class="example-clue">1&nbsp;1&nbsp;1</td>
+                <td class="example-clue">3</td>
+            </tr>
 
-<tr>
-<td class="black-cell"></td>
+            <!-- ROW 1 -->
+            <tr>
+                <td class="example-clue">3</td>
+                <td></td>
+                <td class="example-fill"></td>
+                <td class="example-fill"></td>
+                <td class="example-fill"></td>
+                <td></td>
+            </tr>
 
-<td class="clue-example">
-<span class="down">15</span>
-</td>
+            <!-- ROW 2 -->
+            <tr>
+                <td class="example-clue">1&nbsp;1&nbsp;1</td>
+                <td class="example-fill"></td>
+                <td></td>
+                <td class="example-fill"></td>
+                <td></td>
+                <td class="example-fill"></td>
+            </tr>
 
-<td class="clue-example">
-<span class="down">13</span>
-</td>
-</tr>
+            <!-- ROW 3 -->
+            <tr>
+                <td class="example-clue">5</td>
+                <td class="example-fill"></td>
+                <td class="example-fill"></td>
+                <td class="example-fill"></td>
+                <td class="example-fill"></td>
+                <td class="example-fill"></td>
+            </tr>
 
-<tr>
-<td class="clue-example">
-<span class="down">9</span>
-<span class="right">15</span>
-</td>
+            <!-- ROW 4 -->
+            <tr>
+                <td class="example-clue">1&nbsp;1&nbsp;1</td>
+                <td class="example-fill"></td>
+                <td></td>
+                <td class="example-fill"></td>
+                <td></td>
+                <td class="example-fill"></td>
+            </tr>
 
-<td class="white-example">8</td>
-<td class="white-example">7</td>
-</tr>
+            <!-- ROW 5 -->
+            <tr>
+                <td class="example-clue">3</td>
+                <td></td>
+                <td class="example-fill"></td>
+                <td class="example-fill"></td>
+                <td class="example-fill"></td>
+                <td></td>
+            </tr>
 
-<tr>
-<td class="white-example">9</td>
-<td class="white-example">7</td>
-<td class="white-example">6</td>
-</tr>
-
-</table>
-
-</div>
-
+        </table>
 
     </div>
 
@@ -99,33 +119,13 @@ A cell can contain BOTH clues.
 
     <div id="timer">Time: 00:00</div>
 
-    <div id="boardContainer">
-        <div id="kakuroBoard"></div>
-    </div>
+    <div id="game"></div>
 
-    <div class="game-buttons">
-        <button onclick="undoMove()">Undo</button>
-        <button onclick="submitPuzzle()">Submit</button>
-    </div>
+    <button onclick="submitPuzzle()">Submit</button>
+    <button onclick="undoMove()">Undo</button>
+    <button onclick="clearGrid()">Clear Grid</button>
 
     <p id="resultMessage"></p>
-
-    <!-- Number Pad -->
-    <div id="numberPad">
-        <div class="pad-header">Number Pad</div>
-        <div class="pad-grid">
-            <button onclick="enterNumber(1)">1</button>
-            <button onclick="enterNumber(2)">2</button>
-            <button onclick="enterNumber(3)">3</button>
-            <button onclick="enterNumber(4)">4</button>
-            <button onclick="enterNumber(5)">5</button>
-            <button onclick="enterNumber(6)">6</button>
-            <button onclick="enterNumber(7)">7</button>
-            <button onclick="enterNumber(8)">8</button>
-            <button onclick="enterNumber(9)">9</button>
-        </div>
-        <button class="clear-btn" onclick="clearCell()">Clear Cell</button>
-    </div>
 
 </div>
 
