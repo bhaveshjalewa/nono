@@ -1,222 +1,117 @@
-/* ================= GLOBAL ================= */
-
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #eef1f7;
-    margin: 0;
-    text-align: center;
+body{
+    font-family:Segoe UI, sans-serif;
+    background:#f4f6f9;
+    margin:0;
+    text-align:center;
 }
 
-.main-title {
-    margin-top: 25px;
-    font-size: 36px;
-    letter-spacing: 1px;
+h1{
+    margin-top:30px;
 }
 
 /* ================= START SCREEN ================= */
 
-#startScreen {
-    width: 900px;
-    margin: 40px auto;
+#startScreen{
+    width:850px;
+    margin:40px auto;
+    padding:35px;
+    background:white;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    text-align:left;
 }
 
-.name-card,
-.instruction-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    margin-bottom: 25px;
-    text-align: left;
+/* ================= TIMER ================= */
+
+#timer{
+    color:red;
+    font-weight:bold;
+    margin:15px;
+    font-size:18px;
 }
 
-.name-card {
-    text-align: center;
+/* ================= GAME BOARD ================= */
+
+table{
+    border-collapse:collapse;
+    margin:20px auto;
 }
 
-#playerName {
-    padding: 10px;
-    width: 300px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+td{
+    width:30px;
+    height:30px;
+    border:1px solid #bbb;
+    text-align:center;
+    vertical-align:middle;
 }
 
-button {
-    padding: 8px 18px;
-    border-radius: 6px;
-    border: none;
-    background: #1e3a8a;
-    color: white;
-    cursor: pointer;
+.cell{
+    background:white;
+    cursor:pointer;
 }
 
-button:hover {
-    background: #162d6b;
+.fill{
+    background:black;
 }
 
-/* ================= INSTRUCTIONS ================= */
-
-.instruction-card ul {
-    line-height: 1.6;
+.cell.xmark::after{
+    content:"×";
+    font-size:20px;
+    color:#888;
+    font-weight:bold;
 }
 
-/* ================= EXAMPLE ================= */
-
-.example-grid {
-    border-collapse: collapse;
-    margin: 20px auto;
+.clue{
+    background:#f0f0f0;
+    font-weight:bold;
 }
 
-.example-grid td {
-    width: 40px;
-    height: 40px;
-    border: 2px solid #000;
-    text-align: center;
-    font-weight: bold;
+.blank{
+    border:none;
+    background:#f4f6f9;
 }
 
-.white-example {
-    background: white;
-}
+/* ================= BUTTON ================= */
 
-.clue-example {
-    background: #ddd;
-    position: relative;
-}
-
-.clue-example::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-top: 2px solid black;
-    border-left: 2px solid black;
-    transform: rotate(45deg);
-    top: 0;
-    left: 0;
-}
-
-.clue-example span {
-    position: absolute;
-    font-size: 12px;
-    font-weight: bold;
-    color: black;
-}
-
-.clue-example .down {
-    top: 4px;
-    left: 4px;
-}
-
-.clue-example .right {
-    bottom: 4px;
-    right: 4px;
-}
-
-/* ================= GAME AREA ================= */
-
-#timer {
-    font-weight: bold;
-    font-size: 18px;
-    color: red;
-    margin: 15px;
-}
-
-#boardContainer {
-    display: flex;
-    justify-content: center;
-}
-
-#kakuroBoard table {
-    border-collapse: collapse;
-}
-
-#kakuroBoard td {
-    width: 45px;
-    height: 45px;
-    border: 2px solid #000;
-    text-align: center;
-    vertical-align: middle;
-    font-weight: bold;
-}
-
-/* White Cell */
-.white-cell {
-    background: white;
-    cursor: pointer;
-}
-
-/* Clue Cell */
-.clue-cell {
-    background: #d9d9d9;
-    position: relative;
-}
-
-/* Diagonal from center */
-.clue-cell::after {
-    content: "";
-    position: absolute;
-    width: 140%;
-    height: 2px;
-    background: black;
-    top: 50%;
-    left: -20%;
-    transform: rotate(45deg);
-}
-
-.clue-cell span {
-    position: absolute;
-    font-size: 12px;
-    font-weight: bold;
-    color: black;
-}
-
-.clue-cell .down {
-    top: 4px;
-    left: 4px;
-}
-
-.clue-cell .right {
-    bottom: 4px;
-    right: 4px;
-}
-
-/* ================= NUMBER PAD ================= */
-
-#numberPad {
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.pad-header {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.pad-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 50px);
-    gap: 8px;
-    margin-bottom: 10px;
-}
-
-.pad-grid button {
-    padding: 10px;
-}
-
-.clear-btn {
-    width: 100%;
+button{
+    padding:8px 18px;
+    font-size:15px;
+    margin:5px;
 }
 
 /* ================= RESULT ================= */
 
-#resultMessage {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 15px;
+#resultMessage{
+    font-weight:bold;
+    font-size:18px;
+    margin-top:10px;
+}
+
+/* ================= EXAMPLE NONOGRAM ================= */
+
+.example-grid{
+    border-collapse:collapse;
+    margin:15px auto;
+}
+
+.example-grid td{
+    width:28px;
+    height:28px;
+    border:1px solid #999;
+    text-align:center;
+    background:white;
+}
+
+.example-fill{
+    background:black !important;
+}
+
+.example-clue{
+    background:#eaeaea !important;
+    font-weight:bold;
+    font-size:13px;
+}
+
+.no-border{
+    border:none !important;
 }
