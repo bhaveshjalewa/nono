@@ -1,4 +1,4 @@
-const size=12;
+const size=13;
 let timer=0;
 let interval;
 let undoStack=[];
@@ -19,25 +19,22 @@ function x(s,k){
     return r;
 }
 
-/* ===== ENCRYPTED SOLUTION (12x12) ===== */
 
-/* ===== ENCRYPTED SOLUTION (12x12) ===== */
+/* ===== ENCRYPTED SOLUTION (13x13) ===== */
 
-const p1="W1sxLDEsMSwxLDEsMSwwLDEsMCwxLDAsMV0s";
-const p2="WzAsMSwxLDAsMSwwLDEsMSwwLDEsMSwwXSxb";
-const p3="MSwxLDAsMSwwLDEsMCwxLDEsMCwxLDBdLFsw";
-const p4="LDEsMCwxLDEsMCwxLDAsMSwxLDAsMV0sWzEs";
-const p5="MCwxLDAsMSwxLDAsMSwwLDEsMSwwXSxbMCwx";
-const p6="LDEsMCwxLDAsMSwxLDAsMSwwLDFdLFsxLDAs";
-const p7="MSwxLDAsMSwwLDEsMSwwLDEsMF0sWzAsMSww";
-const p8="LDEsMSwwLDEsMCwxLDEsMCwxXSxbMSwxLDEs";
-const p9="MSwxLDEsMSwwLDEsMCwxLDBdLFswLDEsMSww";
-const p10="LDEsMCwxLDEsMCwxLDAsMV0sWzEsMCwxLDEs";
-const p11="MCwxLDAsMSwxLDAsMSwwXSxbMCwxLDAsMSwx";
-const p12="LDAsMSwwLDEsMSwxLDFdXQ==";
+const p1="W1sxLDEsMSwxLDEsMSwwLDEsMCwxLDAsMSwxXSxbMCwxLDEsMCwxLDAs";
+const p2="MSwxLDAsMSwxLDAsMV0sWzEsMSwwLDEsMCwxLDAsMSwxLDAsMSwwLDBd";
+const p3="LFswLDEsMCwxLDEsMCwxLDAsMSwxLDAsMSwxXSxbMSwwLDEsMCwxLDEs";
+const p4="MCwxLDAsMSwxLDAsMF0sWzAsMSwxLDAsMSwwLDEsMSwwLDEsMCwxLDFd";
+const p5="LFsxLDAsMSwxLDAsMSwwLDEsMSwwLDEsMCwwXSxbMCwxLDAsMSwxLDAs";
+const p6="MSwwLDEsMSwwLDEsMV0sWzEsMSwxLDEsMSwxLDEsMCwxLDAsMSwwLDFd";
+const p7="LFswLDEsMSwwLDEsMCwxLDEsMCwxLDAsMSwwXSxbMSwwLDEsMSwwLDEs";
+const p8="MCwxLDEsMCwxLDAsMV0sWzAsMSwwLDEsMSwwLDEsMCwxLDEsMSwxLDBd";
+const p9="LFsxLDAsMSwwLDEsMSwwLDEsMCwxLDEsMCwxXV0=";
 
 const solution = JSON.parse(d(
-p1+p2+p3+p4+p5+p6+p7+p8+p9+p10+p11+p12
+p1+p2+p3+p4+p5+p6+p7+p8+p9
+));
 ));
 /* ===== CLUE GENERATOR ===== */
 
