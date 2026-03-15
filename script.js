@@ -21,27 +21,24 @@ function x(s,k){
 
 /* ===== ENCRYPTED SOLUTION (12x12) ===== */
 
-const p1="W1sxLDEsMSwwLDAsMSwxLDEsMCwx";
-const p2="LDEsMF0sWzEsMSwwLDEsMSwxLDAs";
-const p3="MSwxLDEsMCwxXSxbMSwxLDEsMCwx";
-const p4="LDEsMSwwLDEsMSwxLDBdLFswLDEs";
-const p5="MSwxLDEsMCwxLDEsMCwxLDEsMV0s";
-const p6="WzEsMSwxLDAsMCwxLDEsMSwxLDAs";
-const p7="MSwxXSxbMSwwLDEsMSwxLDEsMCww";
-const p8="LDEsMSwxLDFdLFsxLDEsMSwwLDEs";
-const p9="MSwxLDEsMCwxLDEsMV0sWzAsMSwx";
-const p10="LDEsMSwxLDAsMSwxLDEsMCwxXSxb";
-const p11="MSwxLDAsMSwxLDEsMSwwLDEsMSwx";
-const p12="LDFdLFsxLDEsMSwwLDAsMSwxLDEs";
-const p13="MCwxLDEsMV0sWzEsMCwxLDEsMSwx";
-const p14="LDAsMSwxLDEsMSwwXSxbMSwxLDEs";
-const p15="MCwxLDEsMSwwLDEsMSwxLDFdXQ==";
+/* ===== ENCRYPTED SOLUTION (12x12) ===== */
 
-const solution=JSON.parse(d(
-p1+p2+p3+p4+p5+p6+p7+p8+p9+p10+
-p11+p12+p13+p14+p15
+const p1="W1sxLDEsMSwxLDEsMSwwLDEsMCwxLDAsMV0s";
+const p2="WzAsMSwxLDAsMSwwLDEsMSwwLDEsMSwwXSxb";
+const p3="MSwxLDAsMSwwLDEsMCwxLDEsMCwxLDBdLFsw";
+const p4="LDEsMCwxLDEsMCwxLDAsMSwxLDAsMV0sWzEs";
+const p5="MCwxLDAsMSwxLDAsMSwwLDEsMSwwXSxbMCwx";
+const p6="LDEsMCwxLDAsMSwxLDAsMSwwLDFdLFsxLDAs";
+const p7="MSwxLDAsMSwwLDEsMSwwLDEsMF0sWzAsMSww";
+const p8="LDEsMSwwLDEsMCwxLDEsMCwxXSxbMSwxLDEs";
+const p9="MSwxLDEsMSwwLDEsMCwxLDBdLFswLDEsMSww";
+const p10="LDEsMCwxLDEsMCwxLDAsMV0sWzEsMCwxLDEs";
+const p11="MCwxLDAsMSwxLDAsMSwwXSxbMCwxLDAsMSwx";
+const p12="LDAsMSwwLDEsMSwxLDFdXQ==";
+
+const solution = JSON.parse(d(
+p1+p2+p3+p4+p5+p6+p7+p8+p9+p10+p11+p12
 ));
-
 /* ===== CLUE GENERATOR ===== */
 
 function generateClues(line){
