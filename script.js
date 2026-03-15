@@ -35,7 +35,6 @@ const p9="LFsxLDAsMSwwLDEsMSwwLDEsMCwxLDEsMCwxXV0=";
 const solution = JSON.parse(d(
 p1+p2+p3+p4+p5+p6+p7+p8+p9
 ));
-));
 /* ===== CLUE GENERATOR ===== */
 
 function generateClues(line){
